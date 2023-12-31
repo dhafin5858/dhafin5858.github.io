@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],  theme: {
+  content: ["./src/**/*.{html,js}"],  
+  theme: {
+    screens: {
+      'tablet': '1330px'
+    },
     extend: {
       animation: {
-        typewriter: 'typewriter 1s steps(20) forwards',
-        caret: 'typewriter 1s steps(30) forwards, blink 1s steps(11) infinite 2s',
+        typewriter: 'typewriter 1s steps(10) forwards',
+        caret: 'typewriter 1s steps(40) forwards, blink 1s steps(11) infinite 2s',
       },
       keyframes: {
         typewriter: {
@@ -32,5 +36,6 @@ module.exports = {
       },
     },
   },
+  
   plugins: [],
 }

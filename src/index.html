@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/css/main.d7f96858.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
@@ -13,12 +14,12 @@
     
     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-9 h-9" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
         </svg>
      </button>
      
-     <aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
+     <aside id="default-sidebar" class=" fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
        <div class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700">
            <ul class="space-y-2">
                <li>
@@ -106,10 +107,13 @@
        </div>
      </aside>
      <div class="">
-        <div class="flex items-center justify-center h-28 ">
-            <h1 class=" relative w-[max-content] text-center text-3xl font-extrabold font-mono tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white ">Hey there! I'm dhafin</h1>    
-        </div>
-        <div class="flex items-center justify-center ">
+        <div class="flex items-center justify-center h-48 ">
+            <h1 class="relative  font-mono text-center text-4xl
+            before:absolute before:inset-0 before:animate-typewriter
+            before:bg-white
+            after:absolute after:inset-0 after:w-[0.1em] after:animate-caret
+            after:bg-black">Hey there, Im Dhafin </h1>        </div>
+        <div class="flex items-center justify-center mt-2 ">
             <h1 class="text-center relative w-[max-content] text-1xl font-extrabold font-mono tracking-tight leading-none text-gray-900 md:text-1xl lg:text-1xl dark:text-white">a 17-year-old tech enthusiast currently studying at vocational high school 4 Bandung</h1>    
         </div>
         <div class="flex items-center justify-center mt-2">
@@ -120,7 +124,11 @@
 <h1 class="text-5xl font-mono font-bold ">My Projects</h1>
 
   </div>
-         <div class="flex justify-center justify-items-center pt-12">
+
+
+<div data-aos="flip-right">
+
+    <div class="flex justify-center justify-items-center pt-12">
         <!-- component -->
         <div class="flex flex-col justify-center items-center ">
             <div
@@ -251,9 +259,16 @@
                             <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75zM20.71 5.63l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83a.996.996 0 000-1.41z"></path>
                         </svg>
                         </div>
+</div>
+
+
                
        
      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
      <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
      </body>
 </html>
