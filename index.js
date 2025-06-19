@@ -33,9 +33,11 @@ function typeEffect() {
 
 document.addEventListener("DOMContentLoaded", typeEffect);
 
-const username = "dhafin5858"; 
-const card = document.getElementById("github-card")
+const username = "dhafin5858";
+const card = document.getElementById("github-card");
+const reposContainer = document.getElementById("repos"); // Add a container for repositories
 
+// Fetch GitHub user data
 fetch(`https://api.github.com/users/${username}`)
   .then(res => res.json())
   .then(data => {
@@ -45,8 +47,7 @@ fetch(`https://api.github.com/users/${username}`)
       <p class="text-sm text-gray-400">@${data.login}</p>
       <p class="text-sm">${data.bio ?? "No bio provided"}</p>
       <div class="flex justify-center gap-6 text-sm pt-2">
-              <span>📦 ${data.public_repos} Repos</span>
-
+        <span>📦 ${data.public_repos} Repos</span>
         <span>👥 ${data.followers} Followers</span>
         <span>🔁 ${data.following} Following</span>
       </div>
@@ -60,6 +61,31 @@ fetch(`https://api.github.com/users/${username}`)
     console.error(error);
   });
 
+// Fetch GitHub repositories
+fetch(`https://api.github.com/users/${username}/repos`)
+  .then(res => res.json())
+  .then(repos => {
+    // Clear any existing content in the repos container
+    reposContainer.innerHTML = "";
+
+    // Loop through the repositories and create cards for each one
+    repos.forEach(repo => {
+      const repoCard = `
+        <div class=" p-4 rounded-lg shadow-md space-y-4 border border-[#00C834]">
+          <h2 class="text-xl font-semibold">${repo.name}</h2>
+          <p class="text-gray-600 mt-2">${repo.description || "No description available"}</p>
+          <a href="${repo.html_url}" target="_blank" class="mt-4 inline-block bg-[#00C834] text-black px-4 py-2 rounded hover:bg-green-500 transition">
+            View on GitHub
+          </a>
+        </div>
+      `;
+      reposContainer.innerHTML += repoCard;
+    });
+  })
+  .catch(error => {
+    reposContainer.innerHTML = `<p class="text-red-500">Failed to load repositories.</p>`;
+    console.error(error);
+  });
  const hackerLine = "http://xxxx.com/uploads/shell.php?cmd=whoami";
 let terminalIndex = 0;
 const terminalTarget = document.getElementById("terminalText");
@@ -79,3 +105,4 @@ function typeHackerLine() {
 }
 
 typeHackerLine();
+
