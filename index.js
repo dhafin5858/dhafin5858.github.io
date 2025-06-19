@@ -60,7 +60,7 @@ fetch(`https://api.github.com/users/${username}`)
     console.error(error);
   });
 
-  const hackerLine = "http://xxxx.com/uploads/shell.php?cmd=whoami";
+ const hackerLine = "http://xxxx.com/uploads/shell.php?cmd=whoami";
 let terminalIndex = 0;
 const terminalTarget = document.getElementById("terminalText");
 
@@ -68,7 +68,13 @@ function typeHackerLine() {
   if (terminalIndex < hackerLine.length) {
     terminalTarget.innerHTML += hackerLine.charAt(terminalIndex);
     terminalIndex++;
-    setTimeout(typeHackerLine, 80); // speed of typing
+    setTimeout(typeHackerLine, 80); // typing speed
+  } else {
+    setTimeout(() => {
+      terminalTarget.innerHTML = "";      // clear text
+      terminalIndex = 0;                  // reset index
+      typeHackerLine();                   // restart typing
+    }, 1500); // wait before restarting
   }
 }
 
