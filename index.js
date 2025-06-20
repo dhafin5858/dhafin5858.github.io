@@ -71,13 +71,32 @@ fetch(`https://api.github.com/users/${username}/repos`)
     // Loop through the repositories and create cards for each one
     repos.forEach(repo => {
       const repoCard = `
-        <div class=" p-4 rounded-lg shadow-md space-y-4 border border-[#00C834]">
-          <h2 class="text-xl font-semibold">${repo.name}</h2>
-          <p class="text-gray-600 mt-2">${repo.description || "No description available"}</p>
-          <a href="${repo.html_url}" target="_blank" class="mt-4 inline-block bg-[#00C834] text-black px-4 py-2 rounded hover:bg-green-500 transition">
-            View on GitHub
-          </a>
-        </div>
+    <div class="p-4 rounded-lg shadow-md space-y-4 border border-[#00C834]">
+  <h2 class="text-xl font-semibold">${repo.name}</h2>
+  <p class="text-gray-600 mt-2">${repo.description || "No description available"}</p>
+
+  <a href="${repo.html_url}" target="_blank" class="inline-block">
+    <button
+      class="overflow-hidden relative w-28 h-10 bg-[#00C834] text-black border-none rounded-md text-sm cursor-pointer z-10 group"
+    >
+      View
+      <span
+        class="absolute w-28 h-24 -top-8 -left-2 bg-[#00e03a] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-400 duration-700 origin-bottom"
+      ></span>
+      <span
+        class="absolute w-28 h-24 -top-8 -left-2 bg-[#00b82f] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-600 origin-bottom"
+      ></span>
+      <span
+        class="absolute w-28 h-24 -top-8 -left-2 bg-[#009924] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-600 duration-500 origin-bottom"
+      ></span>
+      <span
+        class="group-hover:opacity-100 group-hover:duration-700 duration-100 opacity-0 absolute top-2.5 left-8 z-10 text-black"
+        >GitHub</span
+      >
+    </button>
+  </a>
+</div>
+
       `;
       reposContainer.innerHTML += repoCard;
     });
@@ -100,7 +119,7 @@ function typeHackerLine() {
       terminalTarget.innerHTML = "";      // clear text
       terminalIndex = 0;                  // reset index
       typeHackerLine();                   // restart typing
-    }, 1500); // wait before restarting
+    }, 3599); // wait before restarting
   }
 }
 
