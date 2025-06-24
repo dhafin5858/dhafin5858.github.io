@@ -65,10 +65,8 @@ fetch(`https://api.github.com/users/${username}`)
 fetch(`https://api.github.com/users/${username}/repos`)
   .then(res => res.json())
   .then(repos => {
-    // Clear any existing content in the repos container
     reposContainer.innerHTML = "";
 
-    // Loop through the repositories and create cards for each one
     repos.forEach(repo => {
       const repoCard = `
     <div class="p-4 rounded-lg shadow-md space-y-4 border border-[#00C834]">
