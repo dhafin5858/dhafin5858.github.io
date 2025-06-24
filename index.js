@@ -113,7 +113,7 @@ function typeHackerLine() {
   if (terminalIndex < hackerLine.length) {
     terminalTarget.innerHTML += hackerLine.charAt(terminalIndex);
     terminalIndex++;
-    setTimeout(typeHackerLine, 80); // typing speed
+    setTimeout(typeHackerLine, 82); // typing speed
   } else {
     setTimeout(() => {
       terminalTarget.innerHTML = "";      // clear text
