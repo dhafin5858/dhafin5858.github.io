@@ -6,6 +6,9 @@ let charIndex = 0;
 let currentText = "";
 let isDeleting = false;
 
+
+
+
 function typeEffect() {
   const fullText = titles[titleIndex];
   
