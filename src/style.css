@@ -18,3 +18,25 @@
     scrollbar-color: #00C834 #161616;
   }
   
+  @layer utilities {
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow:
+        0 0 10px #00C834,
+        0 0 20px #00C834,
+        0 0 30px #00C834,
+        0 0 40px #00C834;
+    }
+    50% {
+      box-shadow:
+        0 0 20px #00C834,
+        0 0 40px #00ff58,
+        0 0 60px #00ff58,
+        0 0 80px #00ff58;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+}
