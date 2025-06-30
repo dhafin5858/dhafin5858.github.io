@@ -1,4 +1,4 @@
-const titles = ["Muhammad Dhafin", "Cybersecurity Analyst"];
+const titles = ["Web Penetration Tester", "Computer Security Incident Response Team"];
 const element = document.getElementById("animatedText");
 
 let titleIndex = 0;
@@ -23,7 +23,7 @@ function typeEffect() {
   let speed = isDeleting ? 50 : 100;
 
   if (!isDeleting && currentText === fullText) {
-    speed = 1500; 
+    speed = 2000; 
     isDeleting = true;
   } else if (isDeleting && currentText === "") {
     isDeleting = false;
