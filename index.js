@@ -1,4 +1,4 @@
-const titles = ["Web Penetration Tester", "Computer Security Incident Response Team"];
+const titles = ["Web Penetration Tester", "Incident Response Team"];
 const element = document.getElementById("animatedText");
 
 let titleIndex = 0;
@@ -126,3 +126,23 @@ function typeHackerLine() {
 
 typeHackerLine();
 
+ const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const toggleBtn = document.getElementById('mobile-menu-btn');
+
+    // Toggle mobile menu
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll behavior for transparency
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.remove('bg-[#161616]');
+        navbar.classList.add('bg-transparent', 'backdrop-blur-sm');
+      } else {
+        navbar.classList.remove('bg-transparent', 'backdrop-blur-sm');
+        navbar.classList.add('bg-[#161616]');
+      }
+    });
