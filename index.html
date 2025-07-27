@@ -49,7 +49,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" as="style">
-
   <link rel="icon" href="/src/IMG/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" />
@@ -64,6 +63,8 @@
 
 </head>
 <body class="font-mono overflow-y-scroll scroll-smooth" style="font-family: 'Fira Code', monospace;">
+  <div id="cursor" class="fixed top-0 left-0 w-4 h-4 rounded-full pointer-events-none z-50"></div>
+
    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-[#161616]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -287,7 +288,7 @@ fill="#00C834" viewBox="0 0 32 32" >
     </section>
 
  <script async src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-  <script async src="index.js"></script>
+  <script async src="/src/index.js"></script>
   <script async type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 </body>
 </html>

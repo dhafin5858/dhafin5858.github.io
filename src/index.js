@@ -38,9 +38,8 @@ document.addEventListener("DOMContentLoaded", typeEffect);
 
 const username = "dhafin5858";
 const card = document.getElementById("github-card");
-const reposContainer = document.getElementById("repos"); // Add a container for repositories
+const reposContainer = document.getElementById("repos"); 
 
-// Fetch GitHub user data
 fetch(`https://api.github.com/users/${username}`)
   .then(res => res.json())
   .then(data => {
@@ -130,13 +129,11 @@ typeHackerLine();
     const mobileMenu = document.getElementById('mobile-menu');
     const toggleBtn = document.getElementById('mobile-menu-btn');
 
-    // Toggle mobile menu
     toggleBtn.addEventListener('click', () => {
       toggleBtn.classList.toggle('active');
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Scroll behavior for transparency
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
         navbar.classList.remove('bg-[#161616]');
@@ -146,3 +143,9 @@ typeHackerLine();
         navbar.classList.add('bg-[#161616]');
       }
     });
+
+  const cursor = document.getElementById('cursor');
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX - 8}px, ${e.clientY - 8}px)`;
+  });

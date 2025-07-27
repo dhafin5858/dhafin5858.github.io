@@ -60,3 +60,9 @@
     html {
   scroll-behavior: auto !important;
 }
+
+  #cursor {
+    background-color: #00ff00;
+    box-shadow: 0 0 10px #00ff00, 0 0 30px #00ff00;
+    transition: transform 0.05s ease;
+  }
